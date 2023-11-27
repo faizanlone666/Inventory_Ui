@@ -1,6 +1,8 @@
 import 'package:ess_ess_agro/costants/data_helper.dart';
 import 'package:ess_ess_agro/costants/text_strings.dart';
+import 'package:ess_ess_agro/features/ledger/screens/particular_persons_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LedgerScreen extends StatelessWidget {
   const LedgerScreen({super.key});
@@ -81,7 +83,13 @@ class LedgerScreen extends StatelessWidget {
                           title: Text(essAgroLedger[index].name,
                               style:
                                   Theme.of(context).textTheme.headlineMedium),
-                          onTap: () {},
+                          onTap: (() => Get.to(() => ParticularPersonsScreen(
+                                name: essAgroLedger[index].name,
+                                address: essAgroLedger[index].address,
+                                phoneNbr: essAgroLedger[index].phoneNo,
+                                emailId: essAgroLedger[index].email,
+                            company: essEssAgro,
+                              ))),
                         );
                       }),
                 ),
@@ -94,7 +102,7 @@ class LedgerScreen extends StatelessWidget {
                   elevation: 5.0,
                   color: Colors.grey.shade100,
                   child: ListView.builder(
-                      itemCount: essAgroLedger.length,
+                      itemCount: shabirMedicateLedger.length,
                       itemBuilder: (context, index) {
                         return ListTile(
                           leading: Text("${shabirMedicateLedger[index].sNo}",
@@ -103,7 +111,13 @@ class LedgerScreen extends StatelessWidget {
                           title: Text(shabirMedicateLedger[index].name,
                               style:
                                   Theme.of(context).textTheme.headlineMedium),
-                          onTap: () {},
+                          onTap: (() => Get.to(() => ParticularPersonsScreen(
+                                name: shabirMedicateLedger[index].name,
+                                address: shabirMedicateLedger[index].address,
+                                phoneNbr: shabirMedicateLedger[index].phoneNo,
+                                emailId: shabirMedicateLedger[index].email,
+                            company: shabirMedicate,
+                              ))),
                         );
                       }),
                 ),

@@ -64,25 +64,36 @@ class DashboardScreen extends StatelessWidget {
                   child: Card(
                     elevation: 5.0,
                     color: Colors.grey.shade100,
-                    child: Obx(
-                      () => ListView.builder(
-                          itemCount: dashboardController.companyName.value ==
-                                  essEssAgro
-                              ? essAgroLedger.length
-                              : shabirMedicateLedger.length,
-                          itemBuilder: (context, index) {
-                            return ListTile(
-                              leading: dashboardController.companyName.value ==
-                                      essEssAgro
-                                  ? Text("${essAgroLedger[index].sNo}",style: Theme.of(context).textTheme.headlineMedium,)
-                                  : Text("${shabirMedicateLedger[index].sNo}",style: Theme.of(context).textTheme.headlineMedium),
-                              title: dashboardController.companyName.value ==
-                                      essEssAgro
-                                  ? Text(essAgroLedger[index].name,style: Theme.of(context).textTheme.headlineMedium)
-                                  : Text(shabirMedicateLedger[index].name,style: Theme.of(context).textTheme.headlineMedium),
-                              onTap: (){},
-                            );
-                          }),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          child: Text("Ledger", style: Theme.of(context).textTheme.headlineLarge,),
+                        ),
+                        Expanded(
+                          child: Obx(
+                            () => ListView.builder(
+                              scrollDirection: Axis.vertical,
+                                shrinkWrap: true,
+                                itemCount: dashboardController.companyName.value ==
+                                        essEssAgro
+                                    ? essAgroLedger.length
+                                    : shabirMedicateLedger.length,
+                                itemBuilder: (context, index) {
+                                  return ListTile(
+                                    leading: dashboardController.companyName.value ==
+                                            essEssAgro
+                                        ? Text("${essAgroLedger[index].sNo}",style: Theme.of(context).textTheme.headlineMedium,)
+                                        : Text("${shabirMedicateLedger[index].sNo}",style: Theme.of(context).textTheme.headlineMedium),
+                                    title: dashboardController.companyName.value ==
+                                            essEssAgro
+                                        ? Text(essAgroLedger[index].name,style: Theme.of(context).textTheme.headlineMedium)
+                                        : Text(shabirMedicateLedger[index].name,style: Theme.of(context).textTheme.headlineMedium),
+                                    onTap: (){},
+                                  );
+                                }),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -91,29 +102,38 @@ class DashboardScreen extends StatelessWidget {
                   child: Card(
                     color: Colors.grey.shade100,
                     elevation: 5.0,
-                    child: Obx(() => ListView.builder(
-                      itemCount: dashboardController.companyName.value ==
-                          essEssAgro
-                          ? essAgroStock.length
-                          : shabirMedicateStock.length,
-                      itemBuilder: (context, index){
-                        return ListTile(
-                          leading: dashboardController.companyName.value ==
-                              essEssAgro
-                              ? Text("${essAgroStock[index].sNo}",style: Theme.of(context).textTheme.headlineMedium)
-                              : Text("${shabirMedicateStock[index].sNo}",style: Theme.of(context).textTheme.headlineMedium),
-                          title: dashboardController.companyName.value ==
-                              essEssAgro
-                              ? Text(essAgroStock[index].productName,style: Theme.of(context).textTheme.headlineMedium)
-                              : Text(shabirMedicateStock[index].productName,style: Theme.of(context).textTheme.headlineMedium),
-                          trailing: dashboardController.companyName.value ==
-                              essEssAgro
-                              ? Text("$daysLeft")
-                              : Text(shabirMedicateStock[index].dateOfPurchase,style: Theme.of(context).textTheme.headlineMedium),
-                          onTap: (){},
-                        );
-                      },
-                    )),
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          child: Text("Ledger", style: Theme.of(context).textTheme.headlineLarge,),
+                        ),
+                        Expanded(
+                          child: Obx(() => ListView.builder(
+                            itemCount: dashboardController.companyName.value ==
+                                essEssAgro
+                                ? essAgroStock.length
+                                : shabirMedicateStock.length,
+                            itemBuilder: (context, index){
+                              return ListTile(
+                                leading: dashboardController.companyName.value ==
+                                    essEssAgro
+                                    ? Text("${essAgroStock[index].sNo}",style: Theme.of(context).textTheme.headlineMedium)
+                                    : Text("${shabirMedicateStock[index].sNo}",style: Theme.of(context).textTheme.headlineMedium),
+                                title: dashboardController.companyName.value ==
+                                    essEssAgro
+                                    ? Text(essAgroStock[index].productName,style: Theme.of(context).textTheme.headlineMedium)
+                                    : Text(shabirMedicateStock[index].productName,style: Theme.of(context).textTheme.headlineMedium),
+                                trailing: dashboardController.companyName.value ==
+                                    essEssAgro
+                                    ? Text("$daysLeft")
+                                    : Text(shabirMedicateStock[index].dateOfPurchase,style: Theme.of(context).textTheme.headlineMedium),
+                                onTap: (){},
+                              );
+                            },
+                          )),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
