@@ -19,42 +19,43 @@ class MyDrawer extends StatelessWidget {
       backgroundColor: Colors.white,
       shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
       shadowColor: Colors.grey,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          ListTile(
-            selected: homePageController.index.value == 0,
-            onTap: (){
-              homePageController.updateIndex(0);
-              Get.back();
-            },
-            title: const Text("Dashboard"),
-          ),
-          ListTile(
-            selected: homePageController.index.value == 1,
-            onTap: (){
-              homePageController.updateIndex(1);
-              Get.back();
-            },
-            title: const Text("Ledger"),
-          ),
-          ListTile(
-            selected: homePageController.index.value == 2,
-            onTap: (){
-              homePageController.updateIndex(2);
-              Get.back();
-            },
-            title: const Text("Stock"),
-          ),
-          ListTile(
-            selected: homePageController.index.value == 3,
-            onTap: (){
-              homePageController.updateIndex(3);
-              Get.back();
-            },
-            title: const Text("Invoice"),
-          ),
-        ],
+      child: Obx(()=> Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ListTile(
+              selected: homePageController.index.value == 0,
+              onTap: (){
+                homePageController.updateIndex(0);
+                Get.back();
+              },
+              title: Text("Dashboard", style: TextStyle(color: homePageController.index.value == 0 ? Colors.blueGrey : Colors.black),),
+            ),
+            ListTile(
+              selected: homePageController.index.value == 1,
+              onTap: (){
+                homePageController.updateIndex(1);
+                Get.back();
+              },
+              title: Text("Ledger", style: TextStyle(color: homePageController.index.value == 1 ? Colors.blueGrey : Colors.black),),
+            ),
+            ListTile(
+              selected: homePageController.index.value == 2,
+              onTap: (){
+                homePageController.updateIndex(2);
+                Get.back();
+              },
+              title: Text("Stock", style: TextStyle(color: homePageController.index.value == 2 ? Colors.blueGrey : Colors.black),),
+            ),
+            ListTile(
+              selected: homePageController.index.value == 3,
+              onTap: (){
+                homePageController.updateIndex(3);
+                Get.back();
+              },
+              title: Text("Invoice", style: TextStyle(color: homePageController.index.value == 3 ? Colors.blueGrey : Colors.black),),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:ess_ess_agro/costants/data_helper.dart';
 import 'package:ess_ess_agro/costants/text_strings.dart';
+import 'package:ess_ess_agro/features/ledger/screens/add_new_company.dart';
 import 'package:ess_ess_agro/features/ledger/screens/particular_persons_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -29,7 +30,7 @@ class LedgerScreen extends StatelessWidget {
                     style: Theme.of(context).textTheme.headlineLarge,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: (()=> Get.to(const AddNewCompany())),
                     style: ElevatedButton.styleFrom(
                         elevation: 2,
                         shape: const RoundedRectangleBorder(),

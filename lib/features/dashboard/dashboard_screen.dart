@@ -105,7 +105,7 @@ class DashboardScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         SizedBox(
-                          child: Text("Ledger", style: Theme.of(context).textTheme.headlineLarge,),
+                          child: Text("Stock", style: Theme.of(context).textTheme.headlineLarge,),
                         ),
                         Expanded(
                           child: Obx(() => ListView.builder(

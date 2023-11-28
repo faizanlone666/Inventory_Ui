@@ -28,7 +28,6 @@ class MyHomePage extends StatelessWidget {
     ];
     return Scaffold(
       body: Row(
-
         children: [
           MyDrawer(homePageController: homePageController),
           Expanded(

@@ -1,7 +1,9 @@
 import 'package:adaptive_scrollbar/adaptive_scrollbar.dart';
 import 'package:ess_ess_agro/costants/data_helper.dart';
 import 'package:ess_ess_agro/costants/text_strings.dart';
+import 'package:ess_ess_agro/features/ledger/screens/ledger_new_entry_particular_person.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ParticularPersonsScreen extends StatelessWidget {
   ParticularPersonsScreen(
@@ -35,7 +37,7 @@ class ParticularPersonsScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: (()=> Get.to(const LegerAddNewEntryPerPerson())),
               style: ElevatedButton.styleFrom(
                   elevation: 2,
                   shape: const RoundedRectangleBorder(),
