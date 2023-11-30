@@ -1,6 +1,7 @@
 import 'package:ess_ess_agro/features/dashboard/dashboard_screen.dart';
 import 'package:ess_ess_agro/features/home_page/controller/homepage_controller.dart';
 import 'package:ess_ess_agro/features/ledger/ledger_screen.dart';
+import 'package:ess_ess_agro/features/stock/stock_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,13 +15,10 @@ class MyHomePage extends StatelessWidget {
     final homePageController = Get.put(HomePageController());
     const TextStyle optionStyle =
     TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-    const List<Widget> widgetOptions = <Widget>[
-      DashboardScreen(),
-      LedgerScreen(),
-      Text(
-        'Index 2: Stock',
-        style: optionStyle,
-      ),
+    List<Widget> widgetOptions = <Widget>[
+      const DashboardScreen(),
+      const LedgerScreen(),
+      StockScreen(),
       Text(
         'Index 3: Invoice',
         style: optionStyle,

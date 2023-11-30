@@ -5,5 +5,6 @@ class EssEssAgroStockModel{
   DateTime expiryDate;
   String qty;
   String rate;
-  EssEssAgroStockModel(this.sNo,this.productName,this.dateOfPurchase,this.expiryDate,this.rate,this.qty);
+  int stock;
+  EssEssAgroStockModel(this.sNo,this.productName,this.dateOfPurchase,this.expiryDate,this.rate,this.qty,this.stock);
 }

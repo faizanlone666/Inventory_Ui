@@ -5,5 +5,6 @@ class ShabirMedicateStockModel{
   DateTime expiryDate;
   String qty;
   String rate;
-  ShabirMedicateStockModel(this.sNo,this.productName,this.dateOfPurchase,this.expiryDate,this.rate,this.qty);
+  int stock;
+  ShabirMedicateStockModel(this.sNo,this.productName,this.dateOfPurchase,this.expiryDate,this.rate,this.qty,this.stock);
 }
